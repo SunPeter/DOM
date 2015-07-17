@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <meta name="apple-touch-fullscreen" content="no" />
+    <title></title>
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    #parent{
+    /*	margin-left: 20px;
+		position: absolute;*/
+    }
+    #box {
+        width: 200px;
+        height: 200px;
+        background: #FAC;
+        overflow: hidden;
+        padding: 10px;
+        margin: 20px;
+        border: 30px solid #000;
+    }
+    </style>
+    <div id="parent">
+        <div id="box">
+            <div id="content"></div>
+        </div>
+    </div>
+</head>
+
+<body>
+    <script type="text/javascript">
+    var parent=document.querySelector("#parent"),
+    	box = document.querySelector("#box"),
+        content = document.querySelector("#content")
+
+
+
+    console.log(getBoundingClientRect(box))
+
+
+
+    // console.log(getClient(box))
+
+    // console.log(getComputedStyle(content).height)
+
+    //相对父元素的偏移位置
+    // width+padding+border
+    function getOffset(element) {
+        return {
+            offsetWidth: element.offsetWidth,
+            offsetHeight: element.offsetHeight,
+            offsetLeft: element.offsetLeft,
+            offsetTop: element.offsetTop,
+            offsetParent: element.offsetParent
+        }
+    }
+
+    function getBoundingClientRect(element){
+    	return element.getBoundingClientRect(element)
+    }
+
+
+
+    // width+padding 
+    function getClient(element) {
+        return {
+            clientWidth: element.clientWidth,
+            clientHeight: element.clientHeight,
+            clientLeft: element.clientLeft,
+            clientTop: element.clientTop
+        }
+    }
+
+
+    </script>
+</body>
+
+</html>

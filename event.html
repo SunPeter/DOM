@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <meta name="apple-touch-fullscreen" content="no" />
+    <title></title>
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    div {
+        min-width: 100px;
+        min-height: 100px;
+    }
+    
+    div>div {
+        width: 100px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="1" style="background:#F00">
+        
+        <div id="3" style="background:#00F"></div>
+        <div id="2" style="background:#0F0"></div>
+    </div>
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+
+        var div2 = document.getElementById('1')
+        div2.addEventListener("click", function(e) {
+        	e.preventDefault()
+        	e.stopPropagation()
+        	e.target?e.target:e.srcElement
+            console.log(e.target.tagName)
+            console.log(e.relatedTarget)
+        },true)
+    })
+    </script>
+</body>
+
+</html>

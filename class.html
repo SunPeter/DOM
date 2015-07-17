@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <meta name="apple-touch-fullscreen" content="no" />
+    <title></title>
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="div" class="class1 class2">div</div>
+    <script type="text/javascript">
+    var div = document.querySelector("#div"),
+
+        classList = div.classList; //[class1,class2]
+
+    addClass("class2")
+    removeClass("class1")
+
+    div.addEventListener("click", function() {
+        toggleClass("class4")
+    })
+
+    function addClass(className) {
+        if (!classList.contains(className)) {
+            classList.add(className)
+        } else {
+            return
+        }
+    }
+
+    function removeClass(className) {
+        if (classList.contains(className)) {
+            classList.remove(className)
+        } else {
+            return
+        }
+    }
+
+    function toggleClass(className) {
+        classList.toggle(className)
+    }
+    </script>
+</body>
+
+</html>

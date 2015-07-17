@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <meta name="apple-touch-fullscreen" content="no" />
+    <title></title>
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    body {
+        padding-top: 1000px;
+    }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+    document.addEventListener("mousemove", function(e) {
+        if (e.pageX != undefined) {
+            console.log(e.pageX + ":" + e.pageY)
+        } else {
+            e.pageX = e.clientX + document.body.scrollLeft | document.documentElement.scrollLeft
+            e.pageY = e.clientY + document.body.scrollTop | document.documentElement.scrollTop
+        }
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <meta name="apple-touch-fullscreen" content="no" />
+    <title></title>
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="div" class="class1 class2" style="width:500px" data-role="div" name="div">div</div>
+    <script>
+    	var div=document.querySelector("#div")
+
+    	// var attributes=div.attributes;
+    	// for(var i=0;i<attributes.length;i++){
+    	// 	console.log(attributes[i].nodeName+":"+attributes[i].nodeValue)
+    	// }
+
+        setAttr("name","ssd")
+
+        function removeAttr (attr) {
+            if(div.hasAttribute(attr)){
+                div.removeAttribute(attr)
+            }    
+        }
+
+        function setAttr (attr,value) {
+            div.setAttribute(attr,value)  //添加/重置
+        }
+
+        function attr (attr) {
+            if(div.hasAttribute(attr)){
+                return div.getAttribute(attr)
+            }
+            else{
+                return false
+            }
+        }
+    </script>
+</body>
+
+</html>

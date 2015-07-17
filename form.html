@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <meta name="apple-touch-fullscreen" content="no" />
+    <title></title>
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <form action="/" method="get">
+        <input type="text" id="textInput" value="ssd">textinput
+        <br>
+        <input type="checkbox" id="checkbox" value="ssd">checkbox
+        <br>
+        <input type="radio" value="1" name="ssd" checked>radio
+        <input type="radio" value="2" name="ssd">radio
+        <br>
+        <select id="select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <br>
+        <textarea id="textarea" cols="30" rows="10">asdasdas</textarea>
+    </form>
+    <script type="text/javascript">
+    var textinput = document.getElementById("textInput"),
+        checkbox = document.getElementById("checkbox"),
+        radios = document.querySelectorAll("input[type=radio]"),
+        select = document.getElementById('select'),
+        textarea = document.getElementById('textarea')
+
+
+
+    //event
+    textinput.addEventListener("change", function() {
+        console.log(this.value)
+    })
+
+    checkbox.addEventListener("change", function() {
+        console.log(this.checked)
+    })
+
+    for (var i = 0; i < radios.length; i++) {
+        radios[i].addEventListener("change", function() {
+            console.log(this.checked)
+        })
+    }
+
+    select.addEventListener("change", function() {
+        console.log(this.value)
+    })
+
+    textarea.addEventListener("blur", function() {
+        console.log(this.value)
+    })
+
+
+    //get 
+    var formData = {
+        text: textInput.value,
+        checkbox: checkbox.value,
+        radio: (function() {
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    return radios[i].value
+                }
+            }
+        })(),
+        select: select.value,
+        textarea: textarea.value
+    }
+
+    console.log(formData)
+    </script>
+</body>
+
+</html>
